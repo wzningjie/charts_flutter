@@ -47,7 +47,7 @@ abstract class BaseLegendContentBuilder implements LegendContentBuilder {
   Widget build(BuildContext context, common.LegendState legendState,
       common.Legend legend,
       {bool showMeasures}) {
-	if(legendState.legendEntries.isEmpty){
+	if(legendState.legendEntries == null || legendState.legendEntries.length == 0){
       return legendLayout.build(context, []);
     }
     final entryWidgets = legendState.legendEntries.map((entry) {
